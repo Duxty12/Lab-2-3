@@ -7,9 +7,46 @@ public class AssignmentTask3 {
         //You’re NOT ALLOWED to create a new singly linked list for this task
 
         //TO DO
+//        Node temp = head1.next;
+        Node present = head1;
+
+        Node temp1 = head1.next;
+        Node temp2 = head2;
+
+        boolean alter = true;
+
+        boolean flag1 = true;
+        boolean flag2 = true;
+
+        while (flag1 || flag2 ) {
+
+            if (alter) {
+                present.next = temp2;
+                if (temp2.next != null) {
+                    temp2 = temp2.next;
+                }
+                else {
+                    flag2 = false;   // Reached end of List 2
+                }
+                present = present.next;
+                alter = false;
+            }
+            else {
+                present.next = temp1;
+                if (temp1.next != null) {
+                    temp1 = temp1.next;
+                }
+                else {
+                    flag1 = false;   // Reached End of List1
+                }
+                present = present.next;
+                alter = true;
+            }
+        }
+
 
         //remove the following line when returning the Head of the modified LinkedList
-        return null;
+        return head1;
     }
 
     //NOTE: if you find any issue with the driver code please inform AIB
