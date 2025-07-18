@@ -10,8 +10,32 @@ public class AssignmentTask1 {
         
         //TODO
 
+        boolean similar = true;
+        Node One = building1;
+        Node Two = building2;
+
+        while (similar) {
+
+            if (One == null && Two == null) {
+                break;
+            }
+            else if (One == null || Two == null) {
+                return "Not Similar";
+            }
+
+            if (One.elem.equals(Two.elem)) {
+                One = One.next;
+                Two = Two.next;
+            }
+            else {
+                return "Not Similar";
+            }
+
+        }
+
+
         //Once you're ready to return the String delete the following line
-        return null;
+        return "Similar";
     }
 
     //NOTE: if you find any issue with the driver code please inform AIB
