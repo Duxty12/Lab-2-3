@@ -17,7 +17,7 @@ public class AssignmentTask2 {
                 }
             }
             if (temp != null) {
-                int num = (Integer) temp.elem;   // elem is an object so it needs to be cast to Integer so that it can be converted to int;
+                int num = (int) temp.elem;   // elem is an object so it needs to be cast to int;
                 Some += num;
             }
         }
