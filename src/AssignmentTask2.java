@@ -4,7 +4,25 @@ public class AssignmentTask2 {
     // MUST SUBMIT this method
     public static int sumDist(Node head, Integer[] distArr) {
         // To Do
-        return 0; // Remove this line.
+
+        int Some = 0;
+
+        for (Integer val :  distArr) {
+            Node temp = head;
+            for (int i = 1; i <= val; i++) {
+                temp = temp.next;
+
+                if (temp == null) {
+                    break;
+                }
+            }
+            if (temp != null) {
+                int num = (Integer) temp.elem;   // elem is an object so it needs to be cast to Integer so that it can be converted to int;
+                Some += num;
+            }
+        }
+
+        return Some; // Remove this line. Didn't.
     }
 
     public static void main(String[] args) {
