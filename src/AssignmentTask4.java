@@ -9,7 +9,36 @@ public class AssignmentTask4{
         //      into int or Integer like the following:
         //        (int)n.elem  or  (Integer)n.elem
 
-        return null; // Remove this when you're ready to return the new head
+        // REVERSE List 1
+
+        Node present = head1;
+        Node past = present;
+        Node future = present.next;
+        present.next = null;
+
+        while (future != null) {
+            past = present;
+
+            present = future;
+            future = future.next;
+            present.next = past;
+        }
+        // present is now head and head1 is current node (currently last)
+
+        for (int i = 0; i < 4; i++) {
+
+            int add = (int) head2.elem + (int) head3.elem;
+            head2 = head2.next;
+            head3 = head3.next;
+
+            if (add > 9) {
+                add = add % 10;
+            }
+            head1.next = new Node(add);
+            head1 = head1.next;
+        }
+
+        return present; // Remove this when you're ready to return the new head
     }
 
     //NOTE: if you find any issue with the driver code please inform AIB
